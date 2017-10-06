@@ -1,0 +1,129 @@
+<html>
+<title>
+ <SCRIPT language="JavaScript">
+       <!-- Hide this script 
+
+    //  Provide a first guess at a date
+
+    var current_date = new Date()
+    var the_year = current_date.getFullYear()
+    var the_month = current_date.getMonth() + 1
+    var the_day = current_date.getDate()
+
+    if (the_month < 10)
+       var two_digit_month = "0" + the_month
+    else
+       var two_digit_month = the_month
+
+    if (the_day < 10)
+       var two_digit_day = "0" + the_day
+    else
+       var two_digit_day = the_day
+    
+    var date_of_call = the_year + "-" + two_digit_month + "-" + two_digit_day
+
+
+       //   End hiding script -->
+    </SCRIPT>
+
+</title>
+<head>
+	<script src="jquery-3.2.1.min.js" type="text/javascript"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form class="form-horizontal" name="byDayForm" method="get" action="ndfdSOAPclient_XSLT.php">
+<fieldset>
+
+<!-- Form Name -->
+<legend>National Digital Forecast Database XML Data By Day (SOAP)</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Latitud</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="lat" id="lat" type="text" placeholder="38.99" value="38.99" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="lon">Longitud</label>  
+  <div class="col-md-4">
+  <input  name="lon" id="lon" type="text" placeholder="-77.99" value="-77.99" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="format">Formato</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="format-0">
+      <input type="radio" name="format" id="format-0" value="24 hourly" checked="checked">
+      24 horas
+    </label>
+	</div>
+  <div class="radio">
+    <label for="format-1">
+      <input type="radio" name="format" id="format-1" value="12 hourly">
+      12 horas
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Unit">Unidad</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="Unit-0">
+      <input type="radio" name="Unit" id="Unit-0" value="e" checked="checked">
+      U.S. Standard
+    </label>
+	</div>
+  <div class="radio">
+    <label for="Unit-1">
+      <input type="radio" name="Unit" id="Unit-1" value="m">
+      Metrico
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="startDate">Fecha</label>  
+  <div class="col-md-4">
+  <input id="startDate" name="startDate" type="text" placeholder="2004-07-29" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="numDays">Numero de dias</label>  
+  <div class="col-md-4">
+  <input id="numDays" name="numDays" type="text" placeholder="7" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="enviar"></label>
+  <div class="col-md-4">
+    <button  class="btn btn-primary">Enviar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</body>
+</html>
