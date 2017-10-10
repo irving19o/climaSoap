@@ -44,6 +44,8 @@ try{
   $resultado = $cliente->__soapCall("NDFDgenByDay",$parametros);
 
   $xml = simplexml_load_string($resultado);
+  print_r($xml->data->xpath("//probability-of-precipitation ")[0]->asXML());
+    echo "<br/>";
      foreach($xml->data->parameters as $parametro)
      {
       for($i=0; $i<2; $i++)
@@ -56,6 +58,7 @@ try{
        
       }  
      }
+
       function xml_attribute($object, $attribute)
 {
     if(isset($object[$attribute]))
